@@ -4,20 +4,42 @@
     <h1>Dashboard</h1>
   </div>
   <nav class="sidebar">
-    <a routerLink="/home" routerLinkActive="active">
+    <a
+      class="link"
+      routerLink="/home"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
       <i class="pi pi-home"></i>
       <span>Home</span>
     </a>
-    <a routerLink="/payment-orders" routerLinkActive="active">
+    <a
+      class="link"
+      routerLink="/payment-orders"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
       <i class="pi pi-shopping-cart"></i>
-      <span>Orders</span>
-    </a>
-    <a routerLink="/users" routerLinkActive="active">
+      <span>Orders</span></a
+    >
+    <a
+      class="link"
+      routerLink="/users"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
       <i class="pi pi-users"></i>
-      <span>Users</span>
-    </a>
-    <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
-    <button *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+      <span>Users</span></a
+    >
+    @if (!(isLoggedIn)) {
+    <button pButton routerLink="/login">
+      <div class="btn">Login</div>
+    </button>
+    } @else {
+    <button pButton (click)="logout()">
+      <div class="btn">Logout</div>
+    </button>
+    }
   </nav>
 </div>
 
