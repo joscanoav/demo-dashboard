@@ -1,1 +1,23 @@
-<p>sidebar works!</p>
+<div class="sidebar-container">
+  <div routerLink="/home">
+    <i class="pi pi-clipboard"></i>
+    <h1>Dashboard</h1>
+  </div>
+  <nav class="sidebar">
+    <a routerLink="/home" routerLinkActive="active">
+      <i class="pi pi-home"></i>
+      <span>Home</span>
+    </a>
+    <a routerLink="/payment-orders" routerLinkActive="active">
+      <i class="pi pi-shopping-cart"></i>
+      <span>Orders</span>
+    </a>
+    <a routerLink="/users" routerLinkActive="active">
+      <i class="pi pi-users"></i>
+      <span>Users</span>
+    </a>
+    <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    <button *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+  </nav>
+</div>
+
